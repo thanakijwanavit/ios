@@ -29,6 +29,19 @@ class ColorizerTextFieldDelegate: NSObject, UITextFieldDelegate {
         "white" : UIColor.white
     ]
     
+    let numbers: [Int] = [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+    ]
+    
     /**
     * Examines the new string whenever the text changes. Finds color-words, blends them, and set the text color
     */
@@ -55,6 +68,14 @@ class ColorizerTextFieldDelegate: NSObject, UITextFieldDelegate {
         if colorsInTheText.count > 0 {
             textField.textColor = self.blendColorArray(colorsInTheText)
         }
+        
+        // check if the new text contains number ##
+        for char: String in String(newText){
+            if numbers.contains(Int(char)){
+                new_string.append(char)
+            }
+        }
+        
         
         return true
     }

@@ -21,6 +21,8 @@ class DiceViewController: UIViewController {
     
     @IBOutlet var firstDie: UIImageView!
     @IBOutlet var secondDie: UIImageView!
+
+    
     
     // MARK: Life Cycle
     
@@ -62,5 +64,8 @@ class DiceViewController: UIViewController {
     */
     func dismiss() {
         self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func disMiss(_ sender: Any) {
+        self.dismiss()
     }
 }

@@ -57,6 +57,11 @@ class EmojiTextFieldDelegate : NSObject, UITextFieldDelegate {
                 
             } while emojiStringRange.location != NSNotFound
         }
+        
+        //if text longer than 5 then stop editing
+        if textField.text!.count as Int > 5{
+            textField.endEditing(true)
+        }
 
         // If we have replaced an emoji, then we directly edit the text field
         // Otherwise we allow the proposed edit.
@@ -66,7 +71,6 @@ class EmojiTextFieldDelegate : NSObject, UITextFieldDelegate {
         } else {
             return true
         }
-        
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

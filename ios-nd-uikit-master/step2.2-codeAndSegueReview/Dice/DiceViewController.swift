@@ -64,4 +64,12 @@ class DiceViewController: UIViewController {
         // dismiss this view controller
         self.dismiss(animated: true, completion: nil)
     }
+    @IBAction func share(_ sender: Any) {
+        let image = UIImage()
+        
+        let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+//        controller.title = "test"
+//        controller.message = "this is a test message"
+        present(controller, animated: true, completion: nil)
+    }
 }
